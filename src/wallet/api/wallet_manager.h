@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Moola Project
 //
 // All rights reserved.
 //
@@ -33,7 +33,7 @@
 #include "net/http_client.h"
 #include <string>
 
-namespace Monero {
+namespace Moola {
 
 class WalletManagerImpl : public WalletManager
 {
@@ -101,4 +101,4 @@ private:
 
 } // namespace
 
-namespace Bitmonero = Monero;
+namespace Bitmoola = Moola;

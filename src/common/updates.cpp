@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The Monero Project
+// Copyright (c) 2017-2019, The Moola Project
 // 
 // All rights reserved.
 // 
@@ -32,8 +32,8 @@
 #include "dns_utils.h"
 #include "updates.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "updates"
+#undef MOOLA_DEFAULT_LOG_CATEGORY
+#define MOOLA_DEFAULT_LOG_CATEGORY "updates"
 
 namespace tools
 {
@@ -44,12 +44,12 @@ namespace tools
 
     MDEBUG("Checking updates for " << buildtag << " " << software);
 
-    // All four MoneroPulse domains have DNSSEC on and valid
+    // All four MoolaPulse domains have DNSSEC on and valid
     static const std::vector<std::string> dns_urls = {
-        "updates.moneropulse.org",
-        "updates.moneropulse.net",
-        "updates.moneropulse.co",
-        "updates.moneropulse.se"
+        "updates.moolapulse.org",
+        "updates.moolapulse.net",
+        "updates.moolapulse.co",
+        "updates.moolapulse.se"
     };
 
     if (!tools::dns_utils::load_txt_records_from_dns(records, dns_urls))
@@ -99,7 +99,7 @@ namespace tools
 
   std::string get_update_url(const std::string &software, const std::string &subdir, const std::string &buildtag, const std::string &version, bool user)
   {
-    const char *base = user ? "https://downloads.getmonero.org/" : "https://updates.getmonero.org/";
+    const char *base = user ? "https://downloads.getmoola.org/" : "https://updates.getmoola.org/";
 #ifdef _WIN32
     static const char *extension = strncmp(buildtag.c_str(), "install-", 8) ? ".zip" : ".exe";
 #else

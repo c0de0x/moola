@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Moola Project
 // 
 // All rights reserved.
 // 
@@ -37,7 +37,7 @@
 #define CRYPTONOTE_DNS_TIMEOUT_MS                       20000
 
 #define CRYPTONOTE_MAX_BLOCK_NUMBER                     500000000
-#define CRYPTONOTE_GETBLOCKTEMPLATE_MAX_BLOCK_SIZE	196608 //size of block (bytes) that is the maximum that miners will produce
+#define CRYPTONOTE_GETBLOCKTEMPLATE_MAX_BLOCK_SIZE	    196608 //size of block (bytes) that is the maximum that miners will produce
 #define CRYPTONOTE_MAX_TX_SIZE                          1000000
 #define CRYPTONOTE_MAX_TX_PER_BLOCK                     0x10000000
 #define CRYPTONOTE_PUBLIC_ADDRESS_TEXTBLOB_VER          0
@@ -51,9 +51,9 @@
 #define BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW               60
 
 // MONEY_SUPPLY - total number coins to be generated
-#define MONEY_SUPPLY                                    ((uint64_t)(-1))
+#define MONEY_SUPPLY                                    ((uint64_t)(1000000000000)) // 1 Million Max Moola
 #define EMISSION_SPEED_FACTOR_PER_MINUTE                (20)
-#define FINAL_SUBSIDY_PER_MINUTE                        ((uint64_t)300000000000) // 3 * pow(10, 11)
+#define FINAL_SUBSIDY_PER_MINUTE                        ((uint64_t)3000) // 3 * pow(10, 11)
 
 #define CRYPTONOTE_REWARD_BLOCKS_WINDOW                 100
 #define CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2    60000 //size of block (bytes) after which reward for block calculated using block size
@@ -62,22 +62,22 @@
 #define CRYPTONOTE_LONG_TERM_BLOCK_WEIGHT_WINDOW_SIZE   100000 // size in blocks of the long term block weight median window
 #define CRYPTONOTE_SHORT_TERM_BLOCK_WEIGHT_SURGE_FACTOR 50
 #define CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE          600
-#define CRYPTONOTE_DISPLAY_DECIMAL_POINT                12
-// COIN - number of smallest units in one coin
-#define COIN                                            ((uint64_t)1000000000000) // pow(10, 12)
+#define CRYPTONOTE_DISPLAY_DECIMAL_POINT                8
 
-#define FEE_PER_KB_OLD                                  ((uint64_t)10000000000) // pow(10, 10)
-#define FEE_PER_KB                                      ((uint64_t)2000000000) // 2 * pow(10, 9)
-#define FEE_PER_BYTE                                    ((uint64_t)300000)
-#define DYNAMIC_FEE_PER_KB_BASE_FEE                     ((uint64_t)2000000000) // 2 * pow(10,9)
-#define DYNAMIC_FEE_PER_KB_BASE_BLOCK_REWARD            ((uint64_t)10000000000000) // 10 * pow(10,12)
-#define DYNAMIC_FEE_PER_KB_BASE_FEE_V5                  ((uint64_t)2000000000 * (uint64_t)CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2 / CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V5)
-#define DYNAMIC_FEE_REFERENCE_TRANSACTION_WEIGHT         ((uint64_t)3000)
+// COIN - number of smallest units in one coin
+#define COIN                                            ((uint64_t)1000000) // pow(10, 6)
+
+#define FEE_PER_KB_OLD                                  ((uint64_t)10000) // pow(10, 10)
+#define FEE_PER_KB                                      ((uint64_t)2000) // 2 * pow(10, 9)
+#define FEE_PER_BYTE                                    ((uint64_t)10)
+#define DYNAMIC_FEE_PER_KB_BASE_FEE                     ((uint64_t)2000) // 2 * pow(10,9)
+#define DYNAMIC_FEE_PER_KB_BASE_BLOCK_REWARD            ((uint64_t)100000) // 10 * pow(10,12)
+#define DYNAMIC_FEE_PER_KB_BASE_FEE_V5                  ((uint64_t)1) //* (uint64_t)CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2 / CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V5)
+#define DYNAMIC_FEE_REFERENCE_TRANSACTION_WEIGHT        ((uint64_t)3000)
 
 #define ORPHANED_BLOCKS_MAX_COUNT                       100
 
-
-#define DIFFICULTY_TARGET_V2                            120  // seconds
+#define DIFFICULTY_TARGET_V2                            60  // seconds
 #define DIFFICULTY_TARGET_V1                            60  // seconds - before first fork
 #define DIFFICULTY_WINDOW                               720 // blocks
 #define DIFFICULTY_LAG                                  15  // !!!
@@ -143,10 +143,10 @@
 
 #define ALLOW_DEBUG_COMMANDS
 
-#define CRYPTONOTE_NAME                         "bitmonero"
+#define CRYPTONOTE_NAME                         "moola"
 #define CRYPTONOTE_POOLDATA_FILENAME            "poolstate.bin"
-#define CRYPTONOTE_BLOCKCHAINDATA_FILENAME      "data.mdb"
-#define CRYPTONOTE_BLOCKCHAINDATA_LOCK_FILENAME "lock.mdb"
+#define CRYPTONOTE_BLOCKCHAINDATA_FILENAME      "chaindata.mdb"
+#define CRYPTONOTE_BLOCKCHAINDATA_LOCK_FILENAME "chainlock.mdb"
 #define P2P_NET_DATA_FILENAME                   "p2pstate.bin"
 #define RPC_PAYMENTS_DATA_FILENAME              "rpcpayments.bin"
 #define MINER_CONFIG_FILE_NAME                  "miner_conf.json"
@@ -188,20 +188,20 @@ namespace config
 {
   uint64_t const DEFAULT_FEE_ATOMIC_XMR_PER_KB = 500; // Just a placeholder!  Change me!
   uint8_t const FEE_CALCULATION_MAX_RETRIES = 10;
-  uint64_t const DEFAULT_DUST_THRESHOLD = ((uint64_t)2000000000); // 2 * pow(10, 9)
-  uint64_t const BASE_REWARD_CLAMP_THRESHOLD = ((uint64_t)100000000); // pow(10, 8)
+  uint64_t const DEFAULT_DUST_THRESHOLD = ((uint64_t)2000); // 2 * pow(10, 9)
+  uint64_t const BASE_REWARD_CLAMP_THRESHOLD = ((uint64_t)100); // pow(10, 8)
   std::string const P2P_REMOTE_DEBUG_TRUSTED_PUB_KEY = "0000000000000000000000000000000000000000000000000000000000000000";
 
-  uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 18;
-  uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 19;
-  uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 42;
-  uint16_t const P2P_DEFAULT_PORT = 18080;
-  uint16_t const RPC_DEFAULT_PORT = 18081;
-  uint16_t const ZMQ_RPC_DEFAULT_PORT = 18082;
+  uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 50; //M
+  uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 52; //M or N
+  uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 75; //X
+  uint16_t const P2P_DEFAULT_PORT = 19090;
+  uint16_t const RPC_DEFAULT_PORT = 19091;
+  uint16_t const ZMQ_RPC_DEFAULT_PORT = 19092;
   boost::uuids::uuid const NETWORK_ID = { {
-      0x12 ,0x30, 0xF1, 0x71 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x10
-    } }; // Bender's nightmare
-  std::string const GENESIS_TX = "013c01ff0001ffffffffffff03029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121017767aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc890d1";
+      0x13 ,0x33, 0xF1, 0x71 , 0x61, 0x04 , 0x42, 0x61, 0x17, 0x33, 0x00, 0x89, 0x15, 0xA1, 0xA2, 0x10
+    } }; // Moola Network Magic
+  std::string const GENESIS_TX = "013c01ff0004a20502be9d7e2d93a651404528243773295c794fad09735e70b9d7a9390506d8d83dfab817024089b9c99f30769157bf0967d24681989fa3ce69c39141defaa2712c333bb0e4d086030225502a6a4dc12262ef8e8d330e16796dc8a194c27787456ac7835836d1929deca0f7360201373dd1aa48b0a1c89bfb29ff548ed641fa96e9bf4923b0ef0e99717a706f4621019d7fc9a8ba2aa9a911ab5a09f46cf45519a52734d5a43951ca1be57a806d433d";
   uint32_t const GENESIS_NONCE = 10000;
 
   namespace testnet
@@ -213,7 +213,7 @@ namespace config
     uint16_t const RPC_DEFAULT_PORT = 28081;
     uint16_t const ZMQ_RPC_DEFAULT_PORT = 28082;
     boost::uuids::uuid const NETWORK_ID = { {
-        0x12 ,0x30, 0xF1, 0x71 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x11
+        0x13 ,0x33, 0xF1, 0x71 , 0x61, 0x04 , 0x42, 0x61, 0x17, 0x33, 0x00, 0x89, 0x15, 0xA1, 0xA2, 0x11
       } }; // Bender's daydream
     std::string const GENESIS_TX = "013c01ff0001ffffffffffff03029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121017767aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc890d1";
     uint32_t const GENESIS_NONCE = 10001;

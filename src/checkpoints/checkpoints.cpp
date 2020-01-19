@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Moola Project
 //
 // All rights reserved.
 //
@@ -38,8 +38,8 @@
 
 using namespace epee;
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "checkpoints"
+#undef MOOLA_DEFAULT_LOG_CATEGORY
+#define MOOLA_DEFAULT_LOG_CATEGORY "checkpoints"
 
 namespace cryptonote
 {
@@ -254,23 +254,23 @@ namespace cryptonote
   {
     std::vector<std::string> records;
 
-    // All four MoneroPulse domains have DNSSEC on and valid
-    static const std::vector<std::string> dns_urls = { "checkpoints.moneropulse.se"
-						     , "checkpoints.moneropulse.org"
-						     , "checkpoints.moneropulse.net"
-						     , "checkpoints.moneropulse.co"
+    // All four MoolaPulse domains have DNSSEC on and valid
+    static const std::vector<std::string> dns_urls = { "checkpoints.moolapulse.se"
+						     , "checkpoints.moolapulse.org"
+						     , "checkpoints.moolapulse.net"
+						     , "checkpoints.moolapulse.co"
     };
 
-    static const std::vector<std::string> testnet_dns_urls = { "testpoints.moneropulse.se"
-							     , "testpoints.moneropulse.org"
-							     , "testpoints.moneropulse.net"
-							     , "testpoints.moneropulse.co"
+    static const std::vector<std::string> testnet_dns_urls = { "testpoints.moolapulse.se"
+							     , "testpoints.moolapulse.org"
+							     , "testpoints.moolapulse.net"
+							     , "testpoints.moolapulse.co"
     };
 
-    static const std::vector<std::string> stagenet_dns_urls = { "stagenetpoints.moneropulse.se"
-                   , "stagenetpoints.moneropulse.org"
-                   , "stagenetpoints.moneropulse.net"
-                   , "stagenetpoints.moneropulse.co"
+    static const std::vector<std::string> stagenet_dns_urls = { "stagenetpoints.moolapulse.se"
+                   , "stagenetpoints.moolapulse.org"
+                   , "stagenetpoints.moolapulse.net"
+                   , "stagenetpoints.moolapulse.co"
     };
 
     if (!tools::dns_utils::load_txt_records_from_dns(records, nettype == TESTNET ? testnet_dns_urls : nettype == STAGENET ? stagenet_dns_urls : dns_urls))

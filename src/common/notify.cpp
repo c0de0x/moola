@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The Monero Project
+// Copyright (c) 2018, The Moola Project
 // 
 // All rights reserved.
 // 
@@ -33,8 +33,8 @@
 #include "spawn.h"
 #include "notify.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "notify"
+#undef MOOLA_DEFAULT_LOG_CATEGORY
+#define MOOLA_DEFAULT_LOG_CATEGORY "notify"
 
 namespace tools
 {

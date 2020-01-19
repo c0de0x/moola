@@ -1,4 +1,4 @@
-// Copyright (c) 2019, The Monero Project
+// Copyright (c) 2019, The Moola Project
 //
 // All rights reserved.
 //
@@ -82,7 +82,7 @@ static inline int disabled_flags(void) {
     return flags;
   }
 
-  const char *env = getenv("MONERO_RANDOMX_UMASK");
+  const char *env = getenv("MOOLA_RANDOMX_UMASK");
   if (!env) {
     flags = 0;
   }

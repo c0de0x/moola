@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Moola Project
 // 
 // All rights reserved.
 // 
@@ -30,8 +30,8 @@
 #include "common/command_line.h"
 #include "daemon/command_parser_executor.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "daemon"
+#undef MOOLA_DEFAULT_LOG_CATEGORY
+#define MOOLA_DEFAULT_LOG_CATEGORY "daemon"
 
 namespace daemonize {
 
@@ -811,10 +811,10 @@ bool t_command_parser_executor::prune_blockchain(const std::vector<std::string>&
 
   if (args.empty() || args[0] != "confirm")
   {
-    std::cout << "Warning: pruning from within monerod will not shrink the database file size." << std::endl;
+    std::cout << "Warning: pruning from within moolad will not shrink the database file size." << std::endl;
     std::cout << "Instead, parts of the file will be marked as free, so the file will not grow" << std::endl;
     std::cout << "until that newly free space is used up. If you want a smaller file size now," << std::endl;
-    std::cout << "exit monerod and run monero-blockchain-prune (you will temporarily need more" << std::endl;
+    std::cout << "exit moolad and run moola-blockchain-prune (you will temporarily need more" << std::endl;
     std::cout << "disk space for the database conversion though). If you are OK with the database" << std::endl;
     std::cout << "file keeping the same size, re-run this command with the \"confirm\" parameter." << std::endl;
     return true;

@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The Monero Project
+// Copyright (c) 2017-2019, The Moola Project
 // 
 // All rights reserved.
 // 
@@ -44,8 +44,8 @@ extern "C"
 #include "multiexp.h"
 #include "bulletproofs.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "bulletproofs"
+#undef MOOLA_DEFAULT_LOG_CATEGORY
+#define MOOLA_DEFAULT_LOG_CATEGORY "bulletproofs"
 
 //#define DEBUG_BP
 

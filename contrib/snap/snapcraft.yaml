@@ -1,31 +1,31 @@
-name: monero
+name: moola
 version: 0.11.1.0-1
-summary: "Monero: the secure, private, untraceable cryptocurrency https://getmonero.org"
+summary: "Moola: the secure, private, untraceable cryptocurrency https://getmoola.org"
 description: |
-    Monero is a private, secure, untraceable, decentralised digital currency.
+    Moola is a private, secure, untraceable, decentralised digital currency.
     You are your bank, you control your funds, and nobody can trace your transfers
     unless you allow them to do so.
 grade: devel
 confinement: strict
 
 apps:
-    monerod:
+    moolad:
         daemon: forking
         command: |
-          monerod-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/monerod.conf
+          moolad-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/moolad.conf
         plugs:
             - network
             - network-bind
-    monero-wallet-rpc:
+    moola-wallet-rpc:
         command: |
-          monero-wallet-rpc --log-file ${SNAP_USER_DATA}
+          moola-wallet-rpc --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
             - network-bind
-    monero-wallet-cli:
+    moola-wallet-cli:
         command: |
-          monero-wallet-cli --log-file ${SNAP_USER_DATA}
+          moola-wallet-cli --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
@@ -71,8 +71,8 @@ parts:
         plugin: dump
         source: .
         organize:
-            contrib/snap/monerod.conf: etc/monerod.conf
-            contrib/snap/monerod-wrapper: bin/monerod-wrapper
+            contrib/snap/moolad.conf: etc/moolad.conf
+            contrib/snap/moolad-wrapper: bin/moolad-wrapper
         prime:
             - etc
             - bin

@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The Monero Project
+// Copyright (c) 2017-2019, The Moola Project
 // 
 // All rights reserved.
 // 
@@ -37,8 +37,8 @@
 #include <boost/thread/recursive_mutex.hpp>
 #include <boost/uuid/uuid.hpp>
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "cn.block_queue"
+#undef MOOLA_DEFAULT_LOG_CATEGORY
+#define MOOLA_DEFAULT_LOG_CATEGORY "cn.block_queue"
 
 namespace cryptonote
 {

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Moola Project
 // 
 // All rights reserved.
 // 
@@ -36,8 +36,8 @@
 
 #include "lmdb/db_lmdb.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "blockchain.db"
+#undef MOOLA_DEFAULT_LOG_CATEGORY
+#define MOOLA_DEFAULT_LOG_CATEGORY "blockchain.db"
 
 using epee::string_tools::pod_to_hex;
 

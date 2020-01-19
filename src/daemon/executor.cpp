@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Moola Project
 // 
 // All rights reserved.
 // 
@@ -35,12 +35,12 @@
 
 #include <string>
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "daemon"
+#undef MOOLA_DEFAULT_LOG_CATEGORY
+#define MOOLA_DEFAULT_LOG_CATEGORY "daemon"
 
 namespace daemonize
 {
-  std::string const t_executor::NAME = "Monero Daemon";
+  std::string const t_executor::NAME = "Moola Daemon";
 
   void t_executor::init_options(
       boost::program_options::options_description & configurable_options
@@ -58,7 +58,7 @@ namespace daemonize
       boost::program_options::variables_map const & vm
     )
   {
-    LOG_PRINT_L0("Monero '" << MONERO_RELEASE_NAME << "' (v" << MONERO_VERSION_FULL << ") Daemonised");
+    LOG_PRINT_L0("Moola '" << MOOLA_RELEASE_NAME << "' (v" << MOOLA_VERSION_FULL << ") Daemonised");
     return t_daemon{vm, public_rpc_port};
   }
 

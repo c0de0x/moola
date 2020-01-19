@@ -1,4 +1,4 @@
-// Copyright (c) 2018-2019, The Monero Project
+// Copyright (c) 2018-2019, The Moola Project
 // 
 // All rights reserved.
 // 
@@ -42,8 +42,8 @@
 #include "core_rpc_server_error_codes.h"
 #include "rpc_payment.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "daemon.rpc.payment"
+#undef MOOLA_DEFAULT_LOG_CATEGORY
+#define MOOLA_DEFAULT_LOG_CATEGORY "daemon.rpc.payment"
 
 #define STALE_THRESHOLD 15 /* seconds */
 

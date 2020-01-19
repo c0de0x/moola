@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Moola Project
 //
 // All rights reserved.
 //
@@ -32,7 +32,7 @@
 #include <string>
 #include <ctime>
 
-namespace Monero {
+namespace Moola {
 
 class TransactionHistoryImpl;
 
@@ -84,4 +84,4 @@ private:
 
 } // namespace
 
-namespace Bitmonero = Monero;
+namespace Bitmoola = Moola;

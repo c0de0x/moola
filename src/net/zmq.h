@@ -1,4 +1,4 @@
-// Copyright (c) 2019, The Monero Project
+// Copyright (c) 2019, The Moola Project
 //
 // All rights reserved.
 //
@@ -35,7 +35,7 @@
 #include "span.h"
 
 //! If the expression is less than 0, return the current ZMQ error code.
-#define MONERO_ZMQ_CHECK(...)                      \
+#define MOOLA_ZMQ_CHECK(...)                      \
     do                                             \
     {                                              \
         if (( __VA_ARGS__ ) < 0)                   \
@@ -43,15 +43,15 @@
     } while (0)
 
 //! Print a message followed by the current ZMQ error message. 
-#define MONERO_LOG_ZMQ_ERROR(...)                                                   \
+#define MOOLA_LOG_ZMQ_ERROR(...)                                                   \
     do                                                                          \
     {                                                                           \
         MERROR( __VA_ARGS__ << ": " << ::net::zmq::get_error_code().message()); \
     } while (0)
 
 //! Throw an exception with a custom `msg`, current ZMQ error code, filename, and line number.
-#define MONERO_ZMQ_THROW(msg)                         \
-    MONERO_THROW( ::net::zmq::get_error_code(), msg )
+#define MOOLA_ZMQ_THROW(msg)                         \
+    MOOLA_THROW( ::net::zmq::get_error_code(), msg )
 
 namespace net
 {

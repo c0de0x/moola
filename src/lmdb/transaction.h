@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The Monero Project
+// Copyright (c) 2018, The Moola Project
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without modification, are
@@ -32,7 +32,7 @@
 #include "lmdb/error.h"
 
 //! Uses C++ type system to differentiate between cursors
-#define MONERO_CURSOR(name)                                    \
+#define MOOLA_CURSOR(name)                                    \
     struct close_ ## name : ::lmdb::close_cursor {};           \
     using name = std::unique_ptr< MDB_cursor, close_ ## name >;
 
@@ -83,7 +83,7 @@ namespace lmdb
     open_cursor(MDB_txn& txn, MDB_dbi tbl) noexcept
     {
         MDB_cursor* cur = nullptr;
-        MONERO_LMDB_CHECK(mdb_cursor_open(&txn, tbl, &cur));
+        MOOLA_LMDB_CHECK(mdb_cursor_open(&txn, tbl, &cur));
         return std::unique_ptr<MDB_cursor, D>{cur};
     }
 

@@ -37,8 +37,8 @@
 #include "http_protocol_handler.h"
 #include "net/http_server_handlers_map2.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "net.http"
+#undef MOOLA_DEFAULT_LOG_CATEGORY
+#define MOOLA_DEFAULT_LOG_CATEGORY "net.http"
 
 namespace epee
 {
